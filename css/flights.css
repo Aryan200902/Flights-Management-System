@@ -1,0 +1,429 @@
+a{
+    text-decoration: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+.navbar{
+    visibility:hidden;
+    height: 7vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(29, 29, 31);
+    width: 100%;
+    justify-content: center;
+}
+.navbar .con{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .con .logo{
+    width: 6%;
+}
+.navbar .con .logo img{
+    width: 100%;
+}
+.navbar .con .nav-list{
+    width: 94%;
+}
+.navbar .con ul{
+    width: 100%;
+    display: flex;
+}
+.navbar .con ul li{
+    font-size: 1.2rem;
+    list-style: none;
+}
+.navbar .con ul li a{
+    color: rgb(188, 188, 197);
+    padding-left: 146px;
+}
+.navbar .con ul li a:hover{
+    color: rgb(231, 231, 238);
+}
+.fimg{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    height: 35vw;
+}
+.fimg img{
+    width: 100%;
+    height: 50%;
+}
+.fimg h1{
+    position: absolute;
+    font-size: 4.0rem;
+    bottom: 265px;
+    left: 657px;
+    margin-bottom: 31px;
+}
+.fimg h3{
+    display: none;
+}
+.fimg .con{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.fimg .in{
+    box-shadow: 0px 1px 19px 6px rgba(0,0,0,0.77);
+    padding-top: 52px;
+    padding-bottom: 59px;
+    border-radius: 18px;
+    width: 57%;
+    display: flex;
+    justify-content: center ;
+    flex-direction: column;
+    z-index: 0;
+}
+.fimg .in .dest{
+    margin-bottom: 50px;
+    width: 100%;
+    margin-left: 74px;
+    display: flex;
+}
+.fimg .in .dest>ul{
+    display: flex;
+    width: 41%;
+    justify-content: space-between;
+}
+.fimg .in .dest>ul li{
+    list-style: none;
+    background-color: #f00;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+.fimg .in .dest>ul li:first-child{
+    text-align: center;
+    width: 100%;
+}
+
+
+
+.fimg .in div i{
+    margin-right: 3px;
+}
+
+.fimg .in input{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+.dest .left {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+}
+.dest .left .dd ul li{
+    display: none;
+    
+}
+.dest .left:first-child{
+    padding-left: 25px;
+
+}
+
+.dest .left .dd p{
+    padding-top: 11px;
+    
+    padding-bottom: 11px;
+}
+/* .dest .left:first-child .dd{
+    width: 80%;
+    /* bottom: 100px; } */
+
+
+.dest .left:last-child .dd{
+    margin-left: 38px;
+    width: 50%;
+}
+.dest .left .dd{
+    border-radius: 10px;
+    width: 84%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #ddd; 
+    
+    
+    
+}
+
+.dest .left .dd ul li input{
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.dest .left .dd ul{
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+
+
+    /* position:relative; */
+    z-index: 1; 
+}
+.dest .left .dd:hover li{
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    background-color: #ddd;
+    padding: 10px 5px;
+    justify-content: space-between;
+    
+}
+.srch{
+    padding: 0px;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 0px;
+    padding-left: 45px;
+}
+.srch button{
+    background-color: rgb(255, 255, 255);
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 5px 10px #000000;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-bottom: 4px solid #729bb3;
+    padding: 10px 35px;
+    border-radius: 18px;
+    margin-left: -125px;
+}
+.srch button:hover {
+    box-shadow: 0px 15px 25px -5px #779cb1;
+    transform: scale(1.03);
+}
+.srch button:active {
+    box-shadow: 0px 4px 8px #000000;
+    transform: scale(0.98);
+  }
+.pas:hover li{
+    display: block;
+} 
+.loader-wrapper{
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+  
+.ball {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    margin: 0 10px;
+    
+    animation: 2s bounce ease infinite;
+}
+  
+.blue {
+    background-color: #4285F5;
+}
+  
+.red {
+    background-color: #EA4436;
+    animation-delay: .25s;
+}
+  
+.yellow {
+    background-color: #FBBD06;
+    animation-delay: .5s;
+}
+  
+.green {
+    background-color: #34A952;
+    animation-delay: .75s;
+}
+  
+@keyframes bounce {  
+      50% {
+          transform: translateY(25px);
+      }
+}
+
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+.autocomplete-items2 {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 2;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.autocomplete-items2 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.autocomplete-items2 div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.autocomplete-active2 {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
+
+
+/* .fimg .in nav{
+    width: 91%;
+    display: flex;
+    margin-left: 90px;
+
+}
+.fimg .in nav div{
+    display: flex;
+    margin-right: 55px;
+    align-items: center;
+} */
+
+.tofrom
+{
+    width:81%;
+    display: flex;
+    gap: 52px;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    margin-left: 34px;
+}
+.sub
+{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+.dest .left .dd .pasbut{
+    padding: 10px;
+    margin-left: -9px;
+}
+.dest .right{
+    border-radius: 10px;
+    width: 25%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #ddd; 
+    
+    
+}
+.dest .right .ff{
+    border-radius: 10px;
+    width: 96%;
+    height: 20%;
+    margin-top: 10px;
+    size: 16px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #ddd; 
+    
+    
+}

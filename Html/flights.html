@@ -1,0 +1,347 @@
+<!--ARYAN SHRIVASTAVA-->
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        
+    
+        <link rel="stylesheet" href="css/flights.css">
+        <title>Flights</title>
+        <script src="js/main.js"></script>
+        <link rel="icon" href="/img/pngwing.com.png">
+    </head>
+    
+    <body>
+        <form action="index1.php" method="post">
+        <nav class="navbar">
+            <div class="con">
+                <div class="logo"><img src="img/pngwing.com.png" alt="logo"></div>
+                <ul class="nav-list">
+    
+                    <li><a href="http://localhost/flights/flights.html">Home</a></li>
+                    <li><a href="http://localhost/flights/book.html">Book</a></li>
+                    <li><a href="http://localhost/flights/covidinfo.html">Covid Information</a></li>
+                    <li><a href="http://localhost/flights/contact.html">Contact Us</a></li>
+                    <li><a href="http://localhost/flights/about.html">About</a></li>
+    
+                </ul>
+            </div>
+    
+        </nav>
+        <div class="fimg">
+            <img src="img/Screenshot 2021-11-05 153942.png" alt="photo">
+            <h1>Flights
+            </h1>
+            <div class="con">
+    
+                <div class="in">
+                    <div class="dest">
+                        <div class="left">
+    
+                            <div class="dd">
+                                <div class="pasbut">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <p>Passengers</p>
+                                <ul>
+                                    <form action="index1.php">
+                                    <li>
+                                        <section>Adults <br>Age 18+</section>
+                                        <input name="adults" id="adults" type="number">
+                                    </li>
+                                    <li>
+                                        <section>Children <br>Age 5-17</section>
+                                        <input name="children" id="children" type="number">
+                                    </li>
+                                    <li>
+                                        <section>Infants <br>Age 1-5</section>
+                                        <input name="infants" id="infants" type="number">
+                                    </li>
+                                    </form>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                           <div class="ff">
+
+                            <form action="index1.php" method="post">
+                                <label for="cars">Select Class</label>
+                                <select name="class" id="class">
+                                <ul>
+                                    <option name="economy" id = "economy" value="economy">Economy</option>
+                                    <option name="first" id = "first" value="first">First</option>
+                                    <option name="business" id = "business" value="business">Business</option>
+                                </ul>
+                                </select>
+                            </form>    
+                            </div>
+    
+                            <!-- <div class="dd">
+                                <p>Select Class</p>
+                                <ul>
+                                    <li>Economy</li>
+                                    <li>First</li>
+                                    <li>Business</li>
+                                </ul>
+                            </div> -->
+                        </div>
+                        <div class="srch">
+                            <div>
+                                <button class="btn search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <nav class="tofrom">
+                            <!-- <input type="text" name="value1" id="value1" placeholder="Where To" required>
+                            <input type="text" name="value2" id="value2" placeholder="Where From?" required> -->
+
+                        <div class="sub">
+                            <i class="fas fa-plane-departure"></i>
+                            <div class="autocomplete" style="width:200px;">
+                                <input name="value1" id="value1" type="text"  placeholder="From" required>
+                            </div>
+
+                            <i class="fas fa-plane-arrival"></i>
+                            <div class="autocomplete" style="width:200px;">
+                                <input name="value2" id="value2" type="text"  placeholder="Where To?" required>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+    
+            </div>
+        </form>
+            <div class="loader-wrapper">
+                <div class="wrapper">
+                    <div class="blue ball"></div>
+                    <div class="red ball"></div>
+                    <div class="yellow ball"></div>
+                    <div class="green ball"></div>
+                </div>
+            </div>
+            <script>
+                function autocomplete(inp, arr) {
+                    var currentFocus;
+                    inp.addEventListener("input", function (e) {
+                        var a, b, i, val = this.value;
+                        /*close any already open lists of autocompleted values*/
+                        closeAllLists();
+                        if (!val) { return false; }
+                        currentFocus = -1;
+                        /*create a DIV element that will contain the items (values):*/
+                        a = document.createElement("DIV");
+                        a.setAttribute("id", this.id + "autocomplete-list");
+                        a.setAttribute("class", "autocomplete-items");
+                        /*append the DIV element as a child of the autocomplete container:*/
+                        this.parentNode.appendChild(a);
+                        /*for each item in the array...*/
+                        for (i = 0; i < arr.length; i++) {
+                            /*check if the item starts with the same letters as the text field value:*/
+                            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                                /*create a DIV element for each matching element:*/
+                                b = document.createElement("DIV");
+                                /*make the matching letters bold:*/
+                                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                                b.innerHTML += arr[i].substr(val.length);
+                                /*insert a input field that will hold the current array item's value:*/
+                                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                                /*execute a function when someone clicks on the item value (DIV element):*/
+                                b.addEventListener("click", function (e) {
+                                    /*insert the value for the autocomplete text field:*/
+                                    inp.value = this.getElementsByTagName("input")[0].value;
+                                    /*close the list of autocompleted values,
+                                    (or any other open lists of autocompleted values:*/
+                                    closeAllLists();
+                                });
+                                a.appendChild(b);
+                            }
+                        }
+                    });
+                    /*execute a function presses a key on the keyboard:*/
+                    inp.addEventListener("keydown", function (e) {
+                        var x = document.getElementById(this.id + "autocomplete-list");
+                        if (x) x = x.getElementsByTagName("div");
+                        if (e.keyCode == 40) {
+                            /*If the arrow DOWN key is pressed,
+                            increase the currentFocus variable:*/
+                            currentFocus++;
+                            /*and and make the current item more visible:*/
+                            addActive(x);
+                        } else if (e.keyCode == 38) { //up
+                            /*If the arrow UP key is pressed,
+                            decrease the currentFocus variable:*/
+                            currentFocus--;
+                            /*and and make the current item more visible:*/
+                            addActive(x);
+                        } else if (e.keyCode == 13) {
+                            /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                            e.preventDefault();
+                            if (currentFocus > -1) {
+                                /*and simulate a click on the "active" item:*/
+                                if (x) x[currentFocus].click();
+                            }
+                        }
+                    });
+                    function addActive(x) {
+                        /*a function to classify an item as "active":*/
+                        if (!x) return false;
+                        /*start by removing the "active" class on all items:*/
+                        removeActive(x);
+                        if (currentFocus >= x.length) currentFocus = 0;
+                        if (currentFocus < 0) currentFocus = (x.length - 1);
+                        /*add class "autocomplete-active":*/
+                        x[currentFocus].classList.add("autocomplete-active");
+                    }
+                    function removeActive(x) {
+                        /*a function to remove the "active" class from all autocomplete items:*/
+                        for (var i = 0; i < x.length; i++) {
+                            x[i].classList.remove("autocomplete-active");
+                        }
+                    }
+                    function closeAllLists(elmnt) {
+                        /*close all autocomplete lists in the document,
+                        except the one passed as an argument:*/
+                        var x = document.getElementsByClassName("autocomplete-items");
+                        for (var i = 0; i < x.length; i++) {
+                            if (elmnt != x[i] && elmnt != inp) {
+                                x[i].parentNode.removeChild(x[i]);
+                            }
+                        }
+                    }
+                    /*execute a function when someone clicks in the document:*/
+                    document.addEventListener("click", function (e) {
+                        closeAllLists(e.target);
+                    });
+                }
+    
+                /*An array containing all the country names in the world:*/
+                var countries = ["Bhopal(BHO)","Ahmedabad(AMD)","Jaipur(JAI)", "Raipur(RPR)", "Mumbai(BOM)", "New Delhi(DEL)", "Bangalore(BLR)", "Pune(PNQ)", "Allahabad(IXD)", "Goa(GOI)", "Chennai(MAA)", "Kolkata(CCU)", "Surat(STV)","Lucknow(LKO)"];
+    
+                /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+                autocomplete(document.getElementById("value1"), countries);
+            </script>
+            <script>
+                function autocomplete(inp, arr) {
+                    
+                    var currentFocus;
+                   
+                    inp.addEventListener("input", function (e) {
+                        var a, b, i, val = this.value;
+                       
+                        closeAllLists();
+                        if (!val) { return false; }
+                        currentFocus = -1;
+                       
+                        a = document.createElement("DIV");
+                        a.setAttribute("id", this.id + "autocomplete-list2");
+                        a.setAttribute("class", "autocomplete-items2");
+                       
+                        this.parentNode.appendChild(a);
+                        
+                        for (i = 0; i < arr.length; i++) {
+                            
+                            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                                
+                                b = document.createElement("DIV");
+                                
+                                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                                b.innerHTML += arr[i].substr(val.length);
+                                
+                                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                               
+                                b.addEventListener("click", function (e) {
+                                    
+                                    inp.value = this.getElementsByTagName("input")[0].value;
+                                   
+                                    closeAllLists();
+                                });
+                                a.appendChild(b);
+                            }
+                        }
+                    });
+                   
+                    inp.addEventListener("keydown", function (e) {
+                        var x = document.getElementById(this.id + "autocomplete-list2");
+                        if (x) x = x.getElementsByTagName("div");
+                        if (e.keyCode == 40) {
+                  
+                            currentFocus++;
+                            
+                            addActive(x);
+                        } else if (e.keyCode == 38) { //up
+                           
+                            currentFocus--;
+                            
+                            addActive(x);
+                        } else if (e.keyCode == 13) {
+                            
+                            e.preventDefault();
+                            if (currentFocus > -1) {
+                                
+                                if (x) x[currentFocus].click();
+                            }
+                        }
+                    });
+                    function addActive(x) {
+                       
+                        if (!x) return false;
+                        
+                        removeActive(x);
+                        if (currentFocus >= x.length) currentFocus = 0;
+                        if (currentFocus < 0) currentFocus = (x.length - 1);
+                       
+                        x[currentFocus].classList.add("autocomplete-active2");
+                    }
+                    function removeActive(x) {
+                        for (var i = 0; i < x.length; i++) {
+                            x[i].classList.remove("autocomplete-active2");
+                        }
+                    }
+                    function closeAllLists(elmnt) {
+    
+                        var x = document.getElementsByClassName("autocomplete-items2");
+                        for (var i = 0; i < x.length; i++) {
+                            if (elmnt != x[i] && elmnt != inp) {
+                                x[i].parentNode.removeChild(x[i]);
+                            }
+                        }
+                    }
+    
+                    document.addEventListener("click", function (e) {
+                        closeAllLists(e.target);
+                    });
+                }
+                var countries = ["Bhopal(BHO)","Ahmedabad(AMD)","Jaipur(JAI)", "Raipur(RPR)", "Mumbai(BOM)", "New Delhi(DEL)", "Bangalore(BLR)", "Pune(PNQ)", "Allahabad(IXD)", "Goa(GOI)", "Chennai(MAA)", "Kolkata(CCU)", "Surat(STV)","Lucknow(LKO)"];
+                autocomplete(document.getElementById("value2"), countries);
+            </script>
+            <script>
+    
+                $(window).on("load", function () {
+                    $(".loader-wrapper").delay(1000).fadeOut("slow");
+                    $(".navbar")
+                        .delay(1000)
+                        .queue(function (next) {
+                            $(this).css("visibility", "visible");
+                            next();
+                        });
+                });
+            </script>
+    </body>
+    
+    </html>

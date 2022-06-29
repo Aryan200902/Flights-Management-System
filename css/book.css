@@ -1,0 +1,392 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+.main img{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    /* filter: blur(4px);
+    -webkit-filter: blur(4px); */
+}
+/* .main .gey{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 33, 33);
+    opacity: 0.5;
+}
+.main .im{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+}
+.main img{
+    width: 100%;
+} */
+.main input{
+    padding: 12px;
+    font-size: 14px;         
+}
+.main .hln{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    margin-left: -23px;
+}
+.main .but1{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+    margin-left: -1306px;
+
+}
+.main .but2{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -44px;
+    margin-left: -869px;
+}
+.main .but6{
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 51px;
+    margin-left: -400px;
+}
+.main .but7{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+    margin-left: -868px;
+}
+.main .dob{
+    width: 30%;
+    justify-content: center;
+    margin-top: -46px;
+    margin-left: 432px;
+    color: white;
+}
+.main .but3{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -49px;
+    margin-left: 81px;
+}
+.main .but4{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -42px;
+    margin-left: 510px;
+}
+.main .but5{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -42px;
+    margin-left: 937px;
+}
+/* .srch{
+    padding: 0px;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 0px;
+    padding-left: 45px;
+} */
+.main .psd{
+    display: flex;
+    width: 100%;
+    /* justify-content: center; */
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-top: 52px;
+}
+.srch button{
+    background-color: rgb(255, 255, 255);
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 5px 10px #000000;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-bottom: 4px solid #729bb3;
+    padding: 17px 25px;
+    border-radius: 18px;
+    margin-left: 1280px;
+    /* margin-top: 48px; */
+}
+.srch button:hover {
+    box-shadow: 0px 15px 25px -5px #000000;
+    transform: scale(1.03);
+}
+.srch button:active {
+    box-shadow: 0px 4px 8px #00eeff;
+    transform: scale(0.98);
+  }
+.srch .book .tick{
+    padding: 0px;
+    size: 50px;
+    margin-left: 0px;
+}
+.loader-wrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+  
+.ball {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    margin: 0 10px;
+    
+    animation: 2s bounce ease infinite;
+}
+  
+.blue {
+    background-color: #4285F5;
+}
+  
+.red {
+    background-color: #EA4436;
+    animation-delay: .25s;
+}
+  
+.yellow {
+    background-color: #FBBD06;
+    animation-delay: .5s;
+}
+  
+.green {
+    background-color: #34A952;
+    animation-delay: .75s;
+}
+  
+@keyframes bounce {  
+      50% {
+          transform: translateY(25px);
+      }
+}
+* { box-sizing: border-box; }
+/* body {
+  font: 16px Arial;
+} */
+.but3 .autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.but3 input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+.but3 input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.but3 input[type=submit] {
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+}
+.but3 .autocomplete-items {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.but3 .autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.but3 .autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.but3 .autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
+* { box-sizing: border-box; }
+
+.but4 .autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.but4 input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+.but4 input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.but4 input[type=submit] {
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+}
+.but4 .autocomplete-items2 {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 2;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.but4 .autocomplete-items2 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.but4 .autocomplete-items2 div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.but4 .autocomplete-active2 {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
+* { box-sizing: border-box; }
+
+.but5 .autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.but5 input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+.but5 input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.but5 input[type=submit] {
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+}
+.but5 .autocomplete-items3 {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 2;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.but5 .autocomplete-items3 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.but5 .autocomplete-items3 div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.but5 .autocomplete-active3 {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
+* { box-sizing: border-box; }
+
+.but7 .autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.but7 input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+.but7 input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.but7 input[type=submit] {
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+}
+.but7 .autocomplete-items4 {
+  position: absolute;
+  border: 1px solid #ffffff;
+  border-bottom: none;
+  border-top: none;
+  z-index: 2;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 1px;
+  right: 0;
+}
+.but7 .autocomplete-items4 div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #ffffff;
+}
+.but7 .autocomplete-items4 div:hover {
+  /*when hovering an item:*/
+  background-color: rgb(150, 145, 145);
+}
+.but7 .autocomplete-active4 {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: rgb(47, 182, 216) !important;
+  color: #ffffff;
+}
